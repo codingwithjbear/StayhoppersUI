@@ -36,17 +36,17 @@ const MyComponent: React.FC = () => {
   };
 
   return (
-   <div>
+    <div className="listing-page">
     <h1>Listing Data</h1>
     {data.map(listing => (
-      <div key={listing.id}>
+      <div className="listing" key={listing.id}>
         <h2>{listing.title}</h2>
         <p>{listing.description}</p>
         <p>Price: ${listing.price}</p>
         <p>Bedrooms: {listing.bedrooms}</p>
         <p>Bathrooms: {listing.bathrooms}</p>
         <p>Sqft: {listing.sqft}</p>
-        <img src={listing.photo} alt={listing.title} />
+        <img src={`http://127.0.0.1:8000${listing.photo}`} alt={listing.title} />
         <p>List Date: {listing.list_date}</p>
       </div>
     ))}
